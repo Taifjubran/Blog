@@ -1,8 +1,9 @@
 <h1 class= "text-center mt-4 text-white"> Bloggers  </h1>
-
-<div class="container"> 
+<div class="container">
+  <div class="apple_pagination">
+    <%= will_paginate @users, :container => false %>
+  </div>
   <% @users.each do |user| %>
-
  <div class = "row justify-content-md-center mt-4">
  <div class ="col-8 mt-4">
     <div class="card text-center">
@@ -17,7 +18,9 @@
         <%=pluralize(user.articles.count,"article")%>
         </p>
         <%= link_to 'Show Profile', user, class:"btn btn-outline-primary btn-sm"%>
-        <%= link_to 'Edit Prfoile', edit_user_path(user),class:"btn btn-outline-secondary btn-sm" %>  
+        <% if logged_in? && user==current_user%>
+        <%= link_to 'Edit Prfoile', edit_user_path(user),class:"btn btn-outline-secondary btn-sm" %>
+        <% end %>
       </div>
       <div class="card-footer text-muted">
         <small> Joined at <%= time_ago_in_words(user.created_at)%> ago </small>
@@ -28,7 +31,10 @@
 <% end %>
 </div>
 
+<div class="apple_pagination">
+    <%= will_paginate @users, :container => false %>
+  </div>
 
 
-  
-       
+
+
