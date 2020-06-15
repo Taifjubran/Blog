@@ -18,9 +18,14 @@
         <%=pluralize(user.articles.count,"article")%>
         </p>
         <%= link_to 'Show Profile', user, class:"btn btn-outline-primary btn-sm"%>
-        <% if logged_in? && user==current_user%>
-        <%= link_to 'Edit Prfoile', edit_user_path(user),class:"btn btn-outline-secondary btn-sm" %>
-        <% end %>
+        <% if logged_in?%>
+          <% if user==current_user%>
+            <%= link_to 'Edit Prfoile', edit_user_path(user),class:"btn btn-outline-secondary btn-sm" %>
+          <% end %>
+          <% if current_user.admin?%>
+            <%= link_to 'Delete User', user_path(user), class:"btn btn-outline-danger btn-sm", method: :delete,  data: {confirm: "Are you sure?"} %>
+          <% end %>
+          <%end%>
       </div>
       <div class="card-footer text-muted">
         <small> Joined at <%= time_ago_in_words(user.created_at)%> ago </small>
