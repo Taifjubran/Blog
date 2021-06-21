@@ -1,42 +1,66 @@
 @import 'bootstrap/dist/css/bootstrap';
+@import url('https://fonts.googleapis.com/css?family=Delius');
 
-.navbar {
 
-    background-color: #5e60ce !important;
+
+.navbar{
+  background-color:#7d9eff;
+}
+
+.btn, .badge{
+  background-color: #7d9eff;
+  color: white;
+}
+
+#navcont{
+  background-color:#FFEAD0;
+  display:flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 30px  10%;
 }
 
 .nav-link{
-    color: #f7fff7 !important;
+    color: black !important;
 }
+
+
 
 #logo{
+  cursor: pointer;
+  font-weight: bold;
 
     float: left;
-    color:  #f7fff7 ;
+    color:  black ;
     text-transform: uppercase;
-    font-weight: bold;
+
 }
 
+.nav-item {
+  display: inline-block;
+  padding: 0px 20px;
 
+}
+.nav-link li a {
+  transition: all 0,3s ease 0s;
+}
+.nav-link:hover {
+  color: white !important;
+}
 
 html,
 body {
-  height: 100%;
-}
-
-
-
-#sticky-footer {
-  flex-shrink: none;
-}
-
-/* Other Classes for Page Styling */
-
-body {
-  background: linear-gradient(to right, #0062E6, #33AEFF);
-  background-image: asset-url('1.jpg');
+background-color: #ffff;
+// overflow-y: scroll;
+// overflow-x: scroll;
 
 }
+
+
+
+// /* Other Classes for Page Styling */
+
+
 #home-container {
   margin-top: 40px;
 }
@@ -48,11 +72,11 @@ body {
   .apple_pagination a, .apple_pagination span {
     padding: 0.2em 0.3em; }
   .apple_pagination .disabled {
-    color: white; }
+    color: #c5c5c5; }
   .apple_pagination .current {
     font-style: normal;
     font-weight: bold;
-    background-color:white;
+    background-color:#c5c5c5;
     display: inline-block;
     width: 1.4em;
     height: 1.4em;
@@ -63,6 +87,134 @@ body {
     text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px; }
   .apple_pagination a {
     text-decoration: none;
-    color: white; }
+    color:#c5c5c5; }
     .apple_pagination a:hover, .apple_pagination a:focus {
       text-decoration: underline; }
+
+
+.blog{
+  font-family: Popping;
+  margin: 15px 0;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+
+}
+
+// .blog:hover{
+//   transform: translateY(-6px);
+//   transition: all 260ms;
+// }
+
+
+.blog-inf .titleDes{
+  text-align: center;
+  opacity: 0.7;
+  line-height: 1.6;
+
+}
+.blog-inf .titleArt{
+  padding: 20px 0;
+  font-size: 40px;
+  font-weight: 400;
+}
+.blog img{
+  width: 100%;
+  height: auto;
+}
+.blog-inf{
+  text-align: center;
+  background-color: #f8f8f8	;
+  padding-bottom: 10%;
+
+}
+.blog-inf .titleArt{
+ font-size: 20px;
+ text-transform: capitalize;
+}
+
+
+
+
+
+  .contennt{
+    padding: 200px;
+  }
+  @media  (min-width:960px){
+
+  .card {
+    display:grid;
+     grid-template-columns: repeat(1,1fr) ;
+     grid-gap: 10px;
+    }
+  }
+@media  (max-width:950px){
+  .card {
+  grid-template-columns: repeat(1,1fr);
+}
+
+
+
+
+
+
+//  }
+
+.content{
+
+}
+
+.img {
+  color: black;
+  grid-area: img;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+}
+.blog {
+  grid-area: article;
+  background-color: #FFEAD0;
+  display: grid;
+  grid-template-columns: 500px 500px ;
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas:
+   "img header "
+   "img title "
+   "img des  "
+   "img footer ";
+  grid-gap: 2rem;
+
+
+  grid-area: article;
+  background-color: #FFEAD0;
+  display: grid;
+  grid-template-columns: 500px 500px ;
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas:
+   " header "
+   "main"
+   "img footer";
+  grid-gap: 2rem;
+
+
+
+}
+
+.titleArt {
+color: #000000; font-family: 'Trocchi', serif; font-size: 45px; font-weight: normal; line-height: 48px;
+  font-size: 70px;
+  grid-area: title;
+   background-color: aquamarine;
+  max-width:600px;
+  word-wrap:break-word;
+  text-transform: uppercase;
+  line-height: 100%;
+
+}
+
+
+
+
+
+}

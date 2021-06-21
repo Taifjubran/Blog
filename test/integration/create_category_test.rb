@@ -14,6 +14,7 @@ class CreateCategoryTest < ActionDispatch::IntegrationTest
   end
   test "get new category form and reject invalid category submission" do
     get "/categories/new"
+
     assert_response :success
     assert_no_difference 'Category.count' do
       post categories_path, params: { category: { name: " "} }
