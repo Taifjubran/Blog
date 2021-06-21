@@ -58,6 +58,7 @@ end
 
 gem 'jquery-rails'
 
+gem 'font-awesome-sass', '~> 4.4.0'
 
 
 
