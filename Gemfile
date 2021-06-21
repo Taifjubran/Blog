@@ -58,8 +58,7 @@ end
 
 gem 'jquery-rails'
 
-gem 'font-awesome-less'
-gem 'font-awesome-sass'
+
 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
